@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 from scipy import optimize
 
 
+
 f = lambda x: x**5 - 6 * x**4 + 2 * x**3 + 20 * x**2 - 27 * x + 10
 g = lambda x: 0 * x
 
@@ -19,3 +20,11 @@ plt.plot(x, f(x), 'o')
 plt.plot(x, g(x))
 plt.show()
 
+def f(x):
+    return (x**5 - 6 * x**4 + 2 * x**3 + 20 * x**2 - 27 * x + 10)
+root = optimize.bisect(f, -3, 0.1)
+print(root)
+root = optimize.bisect(f, -1, 1.5)
+print(root)
+root = optimize.bisect(f, -20, 10)
+print(root)
